@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 public class test : MonoBehaviour
 {
-    string path;
     TestInfo test1;
     TestInfo test2;
     TestInfo test3;
@@ -14,7 +13,6 @@ public class test : MonoBehaviour
     // Use this for initialization 
     void Start()
     {
-        ExcelMakerManager.CreateExcelMakerManager();
         // --测试数据  
         test1 = new TestInfo();
         test1.id = "one";
@@ -33,13 +31,8 @@ public class test : MonoBehaviour
         listInfos.Add(test2);
         listInfos.Add(test3);
         // --测试数据 
-        // ManagerExcel.CreateE(); 
     }
-    // Update is called once per frame 
-    void Update()
-    {
 
-    }
     void OnGUI()
     {
         if (GUI.Button(new Rect(100, 0, 100, 100), "aa"))
@@ -54,7 +47,7 @@ public class test : MonoBehaviour
         {
             Directory.CreateDirectory(Application.dataPath + "/Prints");
         }
-        path = Application.dataPath + "/Prints/Excel_" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".xls";
-        ExcelMakerManager.eInstance.ExcelMaker(path, listInfos);
+        string path = Application.dataPath + "/Prints/qiandao" + ".xls";
+        ExcelMakerManager.Instance.ExcelMaker(path, listInfos);
     }
 }
