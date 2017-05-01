@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-
-public class test : MonoBehaviour
+public class PrintExcel : MonoBehaviour
 {
     public Text FileNameText;
 
